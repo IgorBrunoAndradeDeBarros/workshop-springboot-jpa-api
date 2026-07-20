@@ -3,7 +3,6 @@ package com.igor.workshopspringbootjpaapi.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.awt.geom.GeneralPath;
 import java.io.Serializable;
 
 @AllArgsConstructor
