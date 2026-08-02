@@ -1,9 +1,6 @@
 package com.igor.workshopspringbootjpaapi.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
@@ -15,6 +12,7 @@ import java.time.Instant;
 @Setter
 @EqualsAndHashCode
 @Entity
+@Table(name = "tb_order")
 public class Order implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -22,5 +20,11 @@ public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private Instant moment;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private User client;
 
 }
